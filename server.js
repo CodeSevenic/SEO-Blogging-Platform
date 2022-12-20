@@ -9,7 +9,11 @@ require('dotenv').config();
 const app = express();
 
 // db
-mongoose.connect(process.env.DATABASE, { useNewUrlParser: true });
+mongoose.connect(process.env.DATABASE, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+});
 
 // middleware
 app.use(morgan('dev'));
