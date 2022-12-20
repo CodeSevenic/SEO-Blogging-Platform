@@ -16,3 +16,8 @@ app.use(cookieParser());
 
 // cors
 app.use(cors());
+
+// routes
+app.get('/api', (req, res) => {
+  res.json({ time: Date().toString() });
+});
