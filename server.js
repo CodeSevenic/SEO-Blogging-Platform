@@ -21,3 +21,9 @@ app.use(cors());
 app.get('/api', (req, res) => {
   res.json({ time: Date().toString() });
 });
+
+// port
+const port = process.env.PORT || 8000;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
