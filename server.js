@@ -33,7 +33,7 @@ if (process.env.NODE_ENV == 'development') {
 }
 
 // routes middleware
-app.use(blogRoutes);
+app.use('/', blogRoutes);
 
 // port
 const port = process.env.PORT || 8000;
