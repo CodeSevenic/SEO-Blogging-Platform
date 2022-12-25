@@ -24,4 +24,14 @@ const userSchema = new mongoose.Schema({
     lowerCase: true,
     unique: true,
   },
+  profile: {
+    type: String,
+    required: true,
+  },
+  hashed_password: {
+    type: String,
+    required: true,
+  },
+  salt: String,
+  about: {},
 });
