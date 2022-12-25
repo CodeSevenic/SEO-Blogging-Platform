@@ -32,8 +32,8 @@ if (process.env.NODE_ENV == 'development') {
   app.use(cors({ origin: `${process.env.CLIENT_URL}` }));
 }
 
-// routes
-app.get('/api');
+// routes middleware
+app.use(blogRoutes);
 
 // port
 const port = process.env.PORT || 8000;
