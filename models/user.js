@@ -76,4 +76,10 @@ userSchema
     return this._password;
   });
 
+userSchema.methods = {
+  encryptPassword: function (password) {
+    if (!password) return '';
+  },
+};
+
 module.exports = mongoose.model('User', userSchema);
