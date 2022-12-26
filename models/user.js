@@ -72,6 +72,8 @@ userSchema
     // encryptPassword
     this.hashed_password = this.encryptPassword(password);
   })
-  .get();
+  .get(function () {
+    return this._password;
+  });
 
 module.exports = mongoose.model('User', userSchema);
