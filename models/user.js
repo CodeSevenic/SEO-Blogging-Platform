@@ -62,4 +62,16 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+userSchema
+  .virtual('password')
+  .set(function (password) {
+    // create a temporary variable called _password
+    this._password = password;
+    // generate salt
+    this.salt = this.makeSalt();
+    // encryptPassword
+    this.hashed_password = this.encryptPassword(password);
+  })
+  .get();
+
 module.exports = mongoose.model('User', userSchema);
