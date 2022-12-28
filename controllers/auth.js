@@ -42,7 +42,7 @@ exports.signIn = (req, res) => {
     // authenticate
     if (!user.authenticate(password)) {
       return res.status(400).json({
-        error: 'User with email does not exist. Please signup.',
+        error: 'Email and password do not match.',
       });
     }
   });
