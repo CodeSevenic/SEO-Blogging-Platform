@@ -29,3 +29,15 @@ exports.signup = (req, res) => {
     });
   });
 };
+
+exports.signIn = (req, res) => {
+  const { email, password } = req.body;
+  // check if user exist
+  User.findOne({ email }).exec((err, user) => {
+    if (err || !user) {
+      return res.status(400).json({
+        error: 'User with email does not exist. Please signup.',
+      });
+    }
+  });
+};
