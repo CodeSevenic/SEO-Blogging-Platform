@@ -40,4 +40,7 @@ exports.signIn = (req, res) => {
       });
     }
   });
+  // authenticate
+
+  // generate a token and send to client
 };
