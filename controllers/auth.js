@@ -47,7 +47,7 @@ exports.signIn = (req, res) => {
         error: 'Email and password do not match.',
       });
     }
+    // generate a token and send to client
+    const token = jwt.sign({ _id: user.id }, process.env.JWT_SECRET, { expiresIn: '1d' });
   });
-
-  // generate a token and send to client
 };
