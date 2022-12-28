@@ -22,7 +22,10 @@ exports.signup = (req, res) => {
       });
     }
     res.json({
-      message: 'Signup success! please SignIn',
+      user: success,
     });
+    // res.json({
+    //   message: 'Signup success! please SignIn',
+    // });
   });
 };
