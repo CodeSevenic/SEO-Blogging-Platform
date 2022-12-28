@@ -49,5 +49,7 @@ exports.signIn = (req, res) => {
     }
     // generate a token and send to client
     const token = jwt.sign({ _id: user.id }, process.env.JWT_SECRET, { expiresIn: '1d' });
+
+    res.cookie('token', token, { expiresIn: '1d' });
   });
 };
